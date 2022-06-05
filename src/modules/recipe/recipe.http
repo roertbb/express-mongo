@@ -1,0 +1,57 @@
+# Recipes API
+
+@baseURL = http://localhost:3000/v1/recipes
+
+###
+# List all recipes
+GET {{baseURL}}
+
+###
+# Get recipe by id
+GET {{baseURL}}/62a3b3e9907370fff83dcc02
+
+###
+# Add recipe
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "name": "name",
+    "description": "description",
+    "imageUrl": "url",
+    "ingredients": [
+        {
+            "name": "ingredient 2",
+            "amount": 1,
+            "measure": "piece"
+        },
+        {
+            "name": "ingredient 3",
+            "amount": 0.5,
+            "measure": "kg"
+        }
+    ]
+}
+
+###
+# Update recipe
+PUT {{baseURL}}/62a3b2a69cc70878a0d159dd
+Content-Type: application/json
+
+{
+    "name": "name 123",
+    "description": "description",
+    "imageUrl": "url",
+    "ingredients": [
+        {
+            "name": "ingredient 3",
+            "amount": 0.5,
+            "measure": "kg"
+        }
+    ]
+}
+
+###
+# Delete recipe
+DELETE {{baseURL}}/62a3b2a69cc70878a0d159dd
+Content-Type: application/json
